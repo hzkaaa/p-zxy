@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>WCC Portfolio - Demo Page</title>
+
+        <!-- including for some global styling -->
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+    <body>
+        <!-- if you have sub-pages think about adding a simple back button -->
+        <nav>
+            <a href="../">HOME</a>
+        </nav>
+        <header class="documentation-header">
+            <section class="center-text">
+                <h1>PROXEMIOTIC</h1>
+                <h2>Xinyu Zhang</h2>
+                <h2><p>"Proxemiotic"= physical distance + psychic distance </p> </h2>
+            </section>
+        </header>
+
+        <main class="documentation-page">
+            <section>
+                <div class="responsive-video centered-content">
+                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/861834543?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </section>
+            <section>
+                <h1>Introduction</h1>
+                <h3><p>Proxemiotic is an immersive experience that incorporates interactive installations, sound design and spatial design. In contemporary society, the exploration of distance and intimacy between people has become an important topic of interdisciplinary research. "Proxemiotic" is not only a description of the physical distance between people, but also covers the ineffable spiritual distance. It aims to explore the tension between physical calculation and changes in acoustic response to express the subtle changes in emotional and physical distance between people in an unfamiliar space with "measurement" as the core, creating an environment full of dynamics and interactivity. Through an in-depth exploration of the complex, varied and subtle relationships between people, it reflects how people interact with others, both mentally and physically, and triggers their understanding and perception of themselves and others.</p></h3>
+            </section>
+            <section>
+                <h1>Concept and Background Research</h1>
+                
+                <h3><p>Proxemiotic, from Proxemics and Semiotics, is a pre-existing academic term coined by anthropologist Edward T. Hall in the 1960s to describe how people use space and their distance from others, and semiotics, the science of signs, symbols and meaning. Combining these two terms, "proxemiotics" can be understood as the study of emotional and physical distance between people, especially when they are in face-to-face situations.</p>
+                    <p>From a psychological point of view, space is closely linked to the sense of self. Years of research have shown that we establish a complex emotional connection with the space around us, while spatial perception is indispensable for human-to-human interactions. The distance between people is not only physical, but more psychological. Sociologist Edward T. Hall has proposed four types of social distance: "intimate distance", "personal distance", "social distance" and "public distance". Public Distance", which influence the way and depth of our interactions with others. This theory provides theoretical support for our understanding of spatial behaviour in everyday life.(Wikipedia Contributors, 2019)</p>
+                    <p>When people interact with others, they may be physically close but mentally distant; and vice versa, they may be physically far apart but emotionally close. This distance is not just about physical space, but is determined by a combination of trust, experience, emotion, culture and background. Every human interaction, every adjustment to the distance between us and another person is a "Proxemiotic" measurement, even if we may not be fully aware of it. For example, when you meet someone for the first time, you may unconsciously decide to keep a distance from them based on their appearance, language and behaviour, while when you meet a long-time friend, you may naturally keep a closer distance from them.</p>
+                    <p>Thus Proxemiotic shapes a space where one can measure and be measured, observe and be observed. In this space, every element - from the sound to the steel bars to the mirrors - has its symbolic meaning and functionality. The sound, which guides people towards the confines of the arranged measuring space, responds differently to changes in position and distance between people. The steel bar, following the position of the people within the space, bends and deforms. It is sometimes a boundary, sometimes a connection, mapping the subtle changes in distance between people, just as we are sometimes distant and sometimes close to others. The mirror, reflecting the distance between the self and the steel bar, can be seen as an externalised manifestation of a psychological distance. It is not only a reflective medium, but also a unique dimensional portal that not only reflects the physical self, but also maps out an "other me" in our mind.(Priest, 2002b) At the same time, it allows us to observe not only our own appearance and inner self, but also others, providing a more intuitive perspective to think about the change of distance between people and the relationship between people and space. Overall, Proxemiotics provides a theoretical framework for detecting and interpreting human interactions and perceptions in space.</p>
+                    
+                 </h3>
+                    
+                <!-- if you have a full width image try make it not too tall -->
+                
+                
+            </section>
+            <section>
+                <h1>Technical Implementation</h1>
+
+            <h3>
+                <p>In this work, every change and every sound that a person feels in the space is closely related to his own position, distance and movement. Technical realisation becomes the core and key of this work, the project mainly uses Arduino and maxmsp tools to complete the construction of the interactive device and sound design, and uses oc to send data in an independent wifi environment, completes the signal transmission and control of the scene, realises real-time interaction and sound response, and in this way completes the artistic expression of the work. </p>
+<img src="../assets/images/x2.JPG"style="width: 300px; height: 200px;" />
+            <p> (1)Interactive device production</p>
+                <p>  First of all, in the hardware part of the device, the Adafruit ESP32-S3 Feather board of Arduino is used as the basis, connecting two TF-Luna 8m LiDAR Distance Sensors, and each Sensor controls the rotational speed of three 42 stepping motors, so that the motors rotate when a person is close to the TF-Luna 8m LiDAR Distance Sensor the motors rotate. (Hardware selection conditions: in this work did not use the camera, body sensing and other large range of recognition of the device, aimed at avoiding the spatial experiencers to produce a sense of the experience of being watched, linear infrared sensors, like invisible rulers, can allow people to subjectively explore and trigger, two straight lines can create the intersection of two people. The rudder will drive the steel bar while measuring, visualising the distance in the heart. At the same time the slow rotation of the rudder may suggest a change in distance over time. Participants may unconsciously feel the flow of time and the extension and shortening of temporal distance with others when interacting).</p>
+            <p>Secondly, the installation of mirrors and steel bars was completed at the venue, and the sensors and progress motors were fixed. And the front winding assembly of the stepper motor was made through modelling, made solid through 3d printing, and the winding test of the progressive motor and the connection of the stepper motor to the steel bar were carried out according to the actual distance measured. </p>
+            <p> Finally, field sensing testing of the TF-Luna 8m LiDAR distance sensor and stepper motors was completed through field and distance measurements, and multiple debugging of the data was performed to complete the spatial interaction process planning.</p>
+            <p> (2)Sound design and response</p>
+            <p> Firstly, the sound in the space needs to play the role of sensory recognition of the position, so it is designed to hang four speakers from the ceiling in the four corners of the space, connecting the public amplifiers and the four-channel sound card to create a surroundable sound environment, so that when people's position is recognised, the corresponding speakers emit sound, and at the same time, the source of the sound is more to the right when the people are moving to the right. Next, the Max/MSP software was used to create the sound, layering the sound into surround background and effect sounds.</p>
+            <p> 1. Ambient sound: The design of the sound environment took into full consideration the correlation between the sound and the interaction between the people in the space, and produced the mid-frequency and low-frequency line wave surround sound.</p>
+            <p> 2. Effect sound: the four channels ABCD are divided, two TF-Luna 8m LiDAR Distance Sensor control the response of the two speakers respectively, through sound sampling and multiple oscillators to express the change of the distance between people, and to express the physical and emotional distance transformations, this combination can make the experiencers get a richer experience in the visual and auditory level, and also helps to deepen their understanding of the theme of the work.</p>
+            <p>(3)Signal transmission and control </p>
+            <p> When a person enters the space and triggers the TF-Luna 8m LiDAR Distance Sensor, it sends a digital signal of the distance to the ESP32 board, and then transmits the digital signal to the Max/MSP software. In Max/MSP, the signal data is scaled into 0-100, the smaller the number, the faster and more complex the tempo of the triggered sound effect, and vice versa, the slower and purer the sound effect.</p></h3>
+            
+                <!-- example of styling for three images, you can write your own styling -->
+                
+
+                <!-- default flex item is for 4 & follows media query styling for home page -->
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <img src="../assets/images/x6.JPG"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/x3.JPG"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/x4.JPG"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/x5.jpg"/>
+                    </div>
+                </div>
+                <p>(Details)</p>
+            </section>
+
+            <section>
+                <h1>Audience Experience</h1>
+            <h3>
+                <p>Proxemiotic is a very multi-layered and comprehensive experiential project with deep social and cultural significance, involving multiple disciplines including sociology, psychology, ergonomics and acoustics. From the sound design, to the interactive installations, to the spatial layout, Proxemiotic offers a rich multi-layered experience. Each element has its own symbolic meaning and functionality, enabling the audience to feel and interpret the distance between people from different perspectives and levels. By constructing a multi-sensory environment, it provokes the audience to think deeply about emotional and physical distance in human relationships. People in the project will not only think about physical distance, but also realise the complex relationship between emotional and physical distance.</p>
+                </h3>
+            </section>
+            <section>
+
+            <section>
+                <h1>Reflection and Future Development</h1>
+            <h3>
+                <p>Proxemiotic uses a combination of art and technology to make people rethink the complex and subtle relationship of distance between people. Translating the complex and subtle relationship of distance between people into a concrete, perceptible experience through physical and sonic elements, there are some areas for further consideration and development.</p>
+                <p>In terms of the operation of the installation, the sensitivity and range of the sensors may not have been optimal due to technical and time constraints, and the shape and balance of the steel bar being pulled needs to be more accurately controlled, which warrants further research and optimisation in the future. In terms of audience experience, the response was generally positive, but there were also suggestions on how the measurement range should be triggered.</p>
+                <p>For the future development of Proxemiotic, we can try to apply the project to more public spaces to explore how people perceive and adjust the distance between themselves and others in different environments. In addition, we can also try to incorporate more sensors and data analysis tools to provide more accurate and rich feedback.</p>
+                <p>Finally, I would like to express my deepest gratitude to the teachers who supervised this project and the students who participated in it. Without your support and assistance, this project would not have been possible. In particular, your expertise and experience provided invaluable guidance in solving the various problems encountered during the project.</p>
+                </h3>
+            </section>
+            <section>
+                <h1>References</h1>
+                <ul>
+                    
+                <p><li><h4>1. Wikipedia Contributors (2019). Proxemics. [online] Wikipedia.  </h4>
+                    <div> 
+                        <a href="https://en.wikipedia.org/wiki/Proxemics.">
+                             <h5>Proxemics</h5> 
+                        </a>
+                    </div>
+                    <div></li></p>
+
+                        <p><li><h4>2. Freesound. (n.d.). Bell, Candle Damper, A (H4n).wav by InspectorJ. [online]</h4>
+                            <div> 
+                                <a href="https://freesound.org/people/InspectorJ/sounds/411088/">
+                                     <h5>Freesound</h5> 
+                                </a>
+                            </div>
+                            <div></li></p>
+
+                                <p><li> <h4>3. Freesound. (n.d.). Bike, Bell Ding, Single, 01-01.wav by InspectorJ. [online]</h4>
+                                    <div> 
+                                        <a href="https://freesound.org/people/InspectorJ/sounds/484344/">
+                                             <h5>Freesound</h5> 
+                                        </a>
+                                    </div>
+                                    <div></li></p>
+
+                                        <p><li><h4>4. Freesound. (n.d.). Reception bell by cdrk. [online] </h4>
+                                            <div> 
+                                                <a href="https://freesound.org/people/cdrk/sounds/264594/">
+                                                     <h5>Freesound</h5> 
+                                                </a>
+                                            </div>
+                                            <div></li></p>
+                        
+                                                <p><li><h4>5. Priest, S. (2002b). Merleau-Ponty. Google Books. Routledge.  [Accessed 6 Sep. 2023].</h4>
+                                                   </li></p>
+                        
+                                                   <p><li><h4>6. Wikipedia Contributors (2019a). Phenomenology of Perception. [online] Wikipedia </h4>
+                                                    <div> 
+                                                        <a href="https://en.wikipedia.org/wiki/Phenomenology_of_Perception">
+                                                             <h5>Phenomenology of Perception</h5> 
+                                                        </a>
+                                                    </div>
+                                                    <div></li></p>
+
+                                                   <p><li><h4>7. Kruglanski, A.W. and Higgins, E.T. (2013). Social Psychology, Second Edition: Handbook of Basic Principles. [online] Google Books. Guilford Publications. [Accessed 6 Sep. 2023].</h4>
+                                                   </li></p>
+
+                                                   <p><li><h4>8. psycnet.apa.org. (n.d.). APA PsycNet. [online] </h4>
+                                                    <div> 
+                                                        <a href="https://psycnet.apa.org/record/2010-09990-002">
+                                                             <h5>psycnet.apa.org</h5> 
+                                                        </a>
+                                                    </div>
+                                                    <div></li></p>
+
+                                                        <p><li><h4>9. Physical Computing. (n.d.). L1: Intro to the ESP32. [online] </h4>
+                                                            <div> 
+                                                                <a href="https://makeabilitylab.github.io/physcomp/esp32/esp32.html">
+                                                                     <h5>ESP32 Code</h5> 
+                                                                </a>
+                                                            </div>
+                                                            <div></li></p>
+
+                                                                
+
+                                                                        <p><li><h4>10. Maker Portal. (n.d.). Distance Detection with the TF-Luna LiDAR and Raspberry Pi. </h4>
+                                                                            <div> 
+                                                                                <a href="https://makersportal.com/blog/distance-detection-with-the-tf-luna-lidar-and-raspberry-pi">
+                                                                                     <h5>TF-Luna LiDAR Code</h5> 
+                                                                                </a>
+                                                                            </div>
+                                                                            <div></li></p>
+
+                    
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <!-- normally information like contact details etc  -->
+            <!-- read more about semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp1 -->
+            
+         </footer>
+    </body>
+</html>
